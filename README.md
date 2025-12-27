@@ -138,5 +138,5 @@ LearnTrack/
 - Add user authentication and roles.
 
 **Author:** Pawan Bhandari  
-**Java Version:** Java 25 LTS  
+**Java Version:** Java 25 
 
