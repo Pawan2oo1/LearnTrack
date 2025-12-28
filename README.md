@@ -32,69 +32,6 @@ src/
     ├── ui/                  (Main.java - console UI)
     └── util/                (IdGenerator, InputHelper)
 ```
-Class Diagram
-Below is the relationship between core classes:
-
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│  ┌──────────────────┐        ┌──────────────────┐             │
-│  │  Identifiable    │        │   Displayable    │             │
-│  │  (interface)     │        │  (interface)     │             │
-│  └────────┬─────────┘        └────────┬─────────┘             │
-│           │                           │                        │
-│           │        ┌──────────────────┘                        │
-│           │        │                                           │
-│           └────────▼─────────────────┐                        │
-│                                      │                        │
-│                          ┌───────────────────┐               │
-│                          │  Person (abstract)│               │
-│                          │─────────────────── │               │
-│                          │ - id              │               │
-│                          │ - firstName       │               │
-│                          │ - lastName        │               │
-│                          │ - email           │               │
-│                          │─────────────────── │               │
-│                          │ + getId()         │               │
-│                          │ + getFullName()   │               │
-│                          │ + getDisplayText()│               │
-│                          └───────┬───────────┘               │
-│                                  │                            │
-│                                  │ extends                    │
-│                                  │                            │
-│                          ┌───────▼───────────┐               │
-│                          │    Student        │               │
-│                          │─────────────────── │               │
-│                          │ - batch           │               │
-│                          │ - active          │               │
-│                          │─────────────────── │               │
-│                          │ + isActive()      │               │
-│                          │ + getDisplayText()│               │
-│                          └───────────────────┘               │
-│                                                               │
-│  ┌──────────────────┐        ┌──────────────────┐           │
-│  │  Course          │        │   Enrollment     │           │
-│  │  (implements I,D)│        │  (implements I)  │           │
-│  └──────────────────┘        └──────────────────┘           │
-│                                                               │
-│  ┌─────────────────────────────────────────┐               │
-│  │  Service Interfaces & Implementations    │               │
-│  ├─────────────────────────────────────────┤               │
-│  │ StudentService (I) ◄──► StudentServiceImpl│               │
-│  │ CourseService (I)  ◄──► CourseServiceImpl │               │
-│  │ EnrollmentService (I) ◄──► EnrollmentServiceImpl           │
-│  │  (all use ArrayList internally)          │               │
-│  └─────────────────────────────────────────┘               │
-│                                                               │
-│  ┌───────────────────────────────────────┐                 │
-│  │  Main (ui package)                     │                 │
-│  ├───────────────────────────────────────┤                 │
-│  │ - uses StudentService                 │                 │
-│  │ - uses CourseService                  │                 │
-│  │ - uses EnrollmentService              │                 │
-│  └───────────────────────────────────────┘                 │
-│                                                               │
-└─────────────────────────────────────────────────────────────────┘
-
 ## How to Run
 
 ### Using IntelliJ IDEA
