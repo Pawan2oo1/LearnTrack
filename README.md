@@ -91,8 +91,6 @@ Below is the relationship between core classes:
 │  │ - uses StudentService                 │                 │
 │  │ - uses CourseService                  │                 │
 │  │ - uses EnrollmentService              │                 │
-│  │ - uses InputHelper (static Scanner)   │                 │
-│  │ - uses IdGenerator (static counters)  │                 │
 │  └───────────────────────────────────────┘                 │
 │                                                               │
 └─────────────────────────────────────────────────────────────────┘
